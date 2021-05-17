@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ejemplo de JavaScript - jQuery</title>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
+  <link rel="stylesheet" type="text/css" href="css/estilos.css">
+  <script src="js/funciones.js"></script>
+
+</head>
+
+<body>
+    <h1>Validando Formulario con Jquery</h1>
+    <hr>
+
+    
+    <div class="card">
+    
+    
+      <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Iniciar sesión</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">CREAR CUENTA</label>
+
+        <div class="login-space">
+          <div class="login">
+              <div class="group"> <label for="user" class="label">INGRESE SU USUARIO</label> <input id="user" type="text" class="input" placeholder="Usuario" onchange="CambiarMayusculas()" onfocus="CambiaColor(this)"> </div>
+              <div class="group"> <label for="pass" class="label">INGRESE SU CONTRASEÑA</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Contraseña" onfocus="CambiaColor(this)"> </div>
+              <div class="group"> <input id="check" type="checkbox" class="check" checked> <label for="check"><span class="icon"></span> Mantenerme conectado</label> </div>
+              <div class="group"> <input type="submit" class="button" value="CONECTARME" onfocus="CambiaColorB(this)"> </div>
+              <div class="hr"></div>
+              <div class="foot"> <a href="#">Olvide mi contraseña?</a> </div>
+        </div>
+        <form id="mi-formulario" action="index.html">
+          <div class="sign-up-form" >
+            <div class="group"><label for="pass" class="label">nombre: </label><input type="text" name="nombre" id="nombre" class="input" required></div>
+
+            <div class="group"><label for="pass" class="label">apellido: </label><input type="text" name="apellido" class="input" required></div>
+
+            <div class="group"><label for="pass" class="label">Correo Electrónico: </label><input type="text" id="email" name="email" class="input" required placeholder="nombre@dominio.cl"></div>
+          
+            <div class="group"><label for="pass" class="label">Telefono: </label><input type="text" name="fono" id="fono" class="input" minlength="9" required></div>
+          
+            <div class="group"><label for="pass" class="label">Fecha de nacimiento: </label><input type="date" class="input" name="fecha" min="1990-01-01"  max="2021-01-01"required></div>
+
+            <div class="group"><label for="pass" class="label">Contraseña:</label><input type="password" id="password" name="password" class="input" minlength="6"></div>
+          
+            <div class="group"><label for="pass" class="label">Reingresa contraseña: </label><input type="password" name="password2" class="input" minlength="6"></div>
+            <div class="group"><label><input type="checkbox" name ="terminos" id="terminos" value="terminos">  Acepto terminos y condiciones</label><br></div>
+
+            <div class="group"><button input type="submit" class="button">CREAR</button></div>
+          </div>  
+      </div>  
+      </form>
+    </div>
+</body>
+</html>
