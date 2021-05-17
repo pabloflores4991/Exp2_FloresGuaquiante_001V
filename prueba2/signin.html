@@ -1,24 +1,17 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <!--Seccion donde se define la configuracion de las paginas-->
         <!--vincular archivos css, js, jquery, bootstrap-->
         <!--vincular imagenes con formato ico-->
         <title>Pet Shop-Inicio</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
-        <script src="js/funciones.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
-
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-
+        <script src="js/funciones.js"></script>
     </head>
+        
     <body>
         <!--comentarios-->
 
@@ -90,62 +83,53 @@
             </a>
           </div>
 
-          <br>
-          <br>
-
-              <!------------------------------------------------------pruebas---------------------->
+          <h1> crea tu cuenta</h1>
+          <div class="card2">
+            <p></p>
+          <form name="datos" action="singig.html" method="POST">
+            <label for="nombre">Ingrese nombre:</label> 
+            <input type="text" id="nombre" name="nombre" value="" placeholder="Ingrese su nombre" autofocus required><br><br>
+            <label for="apellido">Ingrese apellido:</label> 
+            <input type="text" id="apellido" name="apellido" value="" placeholder="Ingrese su apellido" required><br><br>
+            <label for="genero">Seleccione género:</label><br>
+            <input type="radio" id="hombre" name="genero" value="hombre">
+            <label for="hombre">Masculino</label>
+            <input type="radio" id="mujer" name="genero" value="mujer">
+            <label for="mujer">Femenino</label>
+            <input type="radio" id="otro" name="genero" value="otro">
+            <label for="otro">Otro</label><br><br>
+            <label for="email">Ingrese Email:</label> 
+            <input type="text" id="email" name="email" value="" placeholder="ejemplo@gmail.com" autofocus required><br><br>
+            <label for="password">Cree una contraseña:</label> 
+            <input type="password" id="pass" name="password" value="" placeholder="Ingrese su contraseña" required minlength="5" maxlength="12"><br><br>
+            <label for="password">Confirme contraseña:</label> 
+            <input type="password" id="pass2" name="password2" value="" placeholder="Ingrese su contraseña" required minlength="5" maxlength="12"><br><br>
+            <label><input type="checkbox" id="terminos" value="terminos">  Acepto terminos y condiciones</label><br>
+            <input type="reset" value="Limpiar">
+            <input type="submit" value="Enviar" onclick="alert('Tu cuenta se ha creado')">
+       
           
+          </form>
 
-
-          <div class="row">
-            <div class="col-md-6 mx-auto p-0">
-                <div class="card ">
-                    <div class="login-box">
-                        <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Iniciar sesión</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">CREAR CUENTA</label>
-                            <div class="login-space">
-                                <div class="login">
-                                    <div class="group"> <label for="user" class="label">INGRESE SU USUARIO</label> <input id="user" type="text" class="input" placeholder="Usuario" onchange="CambiarMayusculas()" onfocus="CambiaColor(this)"> </div>
-                                    <div class="group"> <label for="pass" class="label">INGRESE SU CONTRASEÑA</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Contraseña" onfocus="CambiaColor(this)"> </div>
-                                    <div class="group"> <input id="check" type="checkbox" class="check" checked> <label for="check"><span class="icon"></span> Mantenerme conectado</label> </div>
-                                    <div class="group"> <input type="submit" class="button" value="CONECTARME" onfocus="CambiaColorB(this)"> </div>
-                                    <div class="hr"></div>
-                                    <div class="foot"> <a href="#">Olvide mi contraseña?</a> </div>
-                                </div>
-                                <div class="sign-up-form" >
-                                    <div class="group"> <label for="user" class="label">Crea tu nombre de usuario</label> <input id="user" name="nombre" type="text" class="input" placeholder="Usuario" onchange="CambiarMayusculas()" onfocus="CambiaColor(this)"> </div>
-                                    <div class="group"> <label for="pass" class="label">CREA TU CONTRASEÑA</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Contraseña" onfocus="CambiaColor(this)"> </div>
-                                    <div class="group"> <label for="pass" class="label">CONFIRMAR CONTRASEÑA</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Confirma tu contraseña" onfocus="CambiaColor(this)"> </div>
-                                    <div class="group"> <label for="genero" class="label">Seleccione género:</label><br></div>
-                                    <input type="radio" id="hombre" name="genero" value="hombre">
-                                    <label for="hombre">Masculino</label>
-                                    <input type="radio" id="mujer" name="genero" value="mujer">
-                                    <label for="mujer">Femenino</label>
-                                    <input type="radio" id="otro" name="genero" value="otro">
-                                    <label for="otro">Otro</label><br><br>
-                                    <div class="group"> <label for="pass" class="label">CORREO ELECTRONICO</label> <input id="email" type="text" class="input" name="email" required placeholder="nombre@dominio.cl" onfocus="CambiaColor(this)"> </div>
-                                    <div class="group"> <input id="check" type="checkbox" class="check" checked> <label for="check"><span class="icon"></span> Acepto terminos y condiciones</label> </div>
-                                    <div class="group"> <input type="submit" class="button" value="Crear cuenta" onfocus="CambiaColorB(this)"> </div>
-                                    <div class="foot"> <label for="tab-1">Ya eres miembro?</label> </div>
-                                    <div class="hr"></div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </p>
         </div>
 
-                      <!------------------------------------------------------pruebas---------------------->
 
 
 
 
 
 
-         
 
-      </div>
+        
+
+        <hr>
+        <hr>
+
+
+        
+
+       </div>
         <!--aqui va el pie de pagina-->
         <footer>
             <div class="container-fluid">

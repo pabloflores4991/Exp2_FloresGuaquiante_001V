@@ -1,1 +1,2 @@
-# Exp2_FloresGuaquiante_001V
+# experiencia1_FloresGuaquiante_001V
+Repositorio experiencia 1 petshop

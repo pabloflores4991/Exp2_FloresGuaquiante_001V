@@ -1,24 +1,3 @@
-$(function()
-{
-    $("#formulario").validate({
-        rules:{
-            user:"required",
-            pass2:"required",
-        },
-        messages:{
-            user:{
-                required:'Ingresa tu usuario',
-            },
-            pass2:{
-                required:'Ingresa tu contraseña',
-            }
-        }
-    });
-}
-    );
-
-
-
 $(function() 
 {
   $("#mi-formulario").validate({
@@ -41,8 +20,8 @@ $(function()
           nombre:{
               required:'Ingresa tu nombre',
           },
-          user2:{
-              required:'Ingresa tu nombre de usuario',
+          apellido:{
+              required:'Ingresa tu apellido',
           },
           email: {
               required: 'Ingresa tu correo electrónico',
@@ -76,15 +55,9 @@ $(function()
 
 function CambiarMayusculas()
 {
-    var a = document.getElementById("nombre");
+    var a = document.getElementById("user");
     a.value = a.value.toUpperCase();
 }
-function CambiarMayusculas()
-{
-    var a = document.getElementById("email");
-    a.value = a.value.toUpperCase();
-}
-
 
 function CambiaColor(a)
 {
@@ -95,5 +68,3 @@ function CambiaColorB(a)
 {
     a.style.background = "red";
 }
-
-
