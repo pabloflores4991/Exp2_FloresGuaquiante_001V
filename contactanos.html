@@ -41,7 +41,7 @@
                   <a class="nav-link" href="quienessomos.html">Quiénes somos</a>
                 </li>  
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sign in</a> <!--pop-up de inicio y/o creacion de usuario-->
+                    <a class="nav-link" href="signin.html">Sign in</a> <!--pop-up de inicio y/o creacion de usuario-->
                   </li>          
               </ul>
             </div>
@@ -88,6 +88,8 @@
           <br>
           <br>
           
+          
+
           <div class="row">
             <div class="col-lg-6">
               <h2>Nos encontramos en:</h2>
@@ -111,8 +113,16 @@
                     <div class="form-group group col-md-4">
                         <label for="form-subject">Telefono:</label>
                         <input type="text" class="form-control" id="form-subject" placeholder="Opcional">
+             
                     </div>
-                    <div class="form-group "> 
+                    
+                    <div class="form-group"> 
+                      <label for="Comentarios"> Tipo de mensaje:</label>
+                      <select class="form-control col-md-4" name="comentario" id="comentario" >
+                          <option value="1">Otro</option>
+                          <option value="2">Compras online</option>
+                          <option value="3">Recomendacion</option>
+                          <option value="4">Reclamo</option>                                               
                       <textarea class="form-control" rows="5" id="comentarios" placeholder="Comentarios" required name="comentarios"></textarea>
                     </div>
                     <button type="submit" class="btn btn-danger">Enviar</button>  
@@ -173,7 +183,7 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
-        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
     </body>
 
 </html>

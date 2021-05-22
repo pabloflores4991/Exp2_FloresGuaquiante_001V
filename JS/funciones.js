@@ -23,6 +23,7 @@ $(function()
 {
   $("#mi-formulario").validate({
        rules: {
+              nombre: true,
               email: {
                   required: true,
                   email: true
@@ -39,10 +40,13 @@ $(function()
           }, //rules
       messages: {
           nombre:{
-              required:'Ingresa tu nombre',
+              required:'Ingresa tu nombre y apellido',
+              minlength:'Caracteres insuficientes',
+              maxlength:'Demasiados caracteres'
           },
           user2:{
               required:'Ingresa tu nombre de usuario',
+              minlength:'Caracteres insuficientes',
           },
           email: {
               required: 'Ingresa tu correo electrónico',
@@ -86,14 +90,18 @@ function CambiarMayusculas()
 }
 
 
-function CambiaColor(a)
-{
-    a.style.background = "white";
-}
 
-function CambiaColorB(a)
-{
-    a.style.background = "red";
-}
+
+function focusFunction(id) {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById(id).style.background = "white";
+  }
+  
+  function blurFunction(id) {
+    // No focus = Changes the background color of input to red
+    document.getElementById(id).style.background = "rgba(155, 30, 30, 0.1)";
+  }
+
+
 
 

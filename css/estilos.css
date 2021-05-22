@@ -276,7 +276,7 @@ label.error {
 }
 
 .login-snip .tab {
-  font-size: 26px;
+  font-size: 25px;
   margin-right: 5px;
   padding-bottom: 0px;
   margin: 0 15px 10px 0;
@@ -287,7 +287,7 @@ label.error {
 
 .login-snip .sign-in:checked+.tab,
 .login-snip .sign-up:checked+.tab {
-  color: #fff;
+  color: rgb(235, 37, 37);
   border-color: #1161ee
 }
 
@@ -305,7 +305,7 @@ label.error {
 
 .login-space .group .button {
   width: 100%;
-  color: #fff;
+  color: rgb(189, 58, 58);
   display: block
 }
 
