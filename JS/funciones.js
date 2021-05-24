@@ -12,6 +12,8 @@ $(function()
             pass2:{
                 required:'Ingresa tu contraseña',
             }
+            
+            
         }
     });
 }
@@ -89,6 +91,10 @@ function CambiarMayusculas()
     a.value = a.value.toUpperCase();
 }
 
+function CambiaColorB(a)
+{
+    a.style.background = "red";
+}
 
 
 

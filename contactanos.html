@@ -106,23 +106,27 @@
                 <form class="my-form">
                     <div class="form-group col-md-6">
                         <input class="form-control" id="nombre" name="nombre" minlength="6" required placeholder="Nombre">
-                    </div>
-                    <div class="form-group col-md-6">
+                        <br>
+                    
+                    
                         <input type="email" class="form-control" id="email" name="email" required  placeholder="Email">
-                    </div>
-                    <div class="form-group group col-md-4">
+                       
+                    
                         <label for="form-subject">Telefono:</label>
                         <input type="text" class="form-control" id="form-subject" placeholder="Opcional">
              
-                    </div>
                     
-                    <div class="form-group"> 
+                    
+                    
                       <label for="Comentarios"> Tipo de mensaje:</label>
-                      <select class="form-control col-md-4" name="comentario" id="comentario" >
-                          <option value="1">Otro</option>
-                          <option value="2">Compras online</option>
-                          <option value="3">Recomendacion</option>
-                          <option value="4">Reclamo</option>                                               
+                      <select class="form-control col-md-4" name="tipomensaje" id="tipomensaje"  >
+                          <option value="1">Elija opcion</option>
+                          <option value="2">Otro</option>
+                          <option value="3">Compras online</option>
+                          <option value="4">Recomendacion</option>
+                          <option value="5">Reclamo</option>
+                          <br> 
+                                                               
                       <textarea class="form-control" rows="5" id="comentarios" placeholder="Comentarios" required name="comentarios"></textarea>
                     </div>
                     <button type="submit" class="btn btn-danger">Enviar</button>  

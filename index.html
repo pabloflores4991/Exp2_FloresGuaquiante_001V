@@ -7,8 +7,82 @@
         <title>Pet Shop-Inicio</title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <script type="text/javascript">
+          window.addEventListener("load", function()
+          {
+                  $.get("https://dog.ceo/api/breeds/list",
+                      function(data){
+                          const option = document.createElement('option');
+                          const valor = "Seleccione la Raza";
+                          option.value = valor;
+                          option.text = valor;
+                          document.getElementById("miSelect").appendChild(option);
+                          $.each(data,function(i,item){
+                              for (let a=0;a<item.length-7;a++){
+                                  const option = document.createElement('option');
+                                  const valor = item[a];
+                                  option.value = valor;
+                                  option.text = valor;
+                                  document.getElementById("miSelect").appendChild(option); 
+                          
+                          }
+                          });
+  
+                      });
+                  });
+      </script>
+     
+      <script type="text/javascript">
+          window.addEventListener("load", function()
+          {
+              $.get("https://dog.ceo/api/breeds/list/all",
+                  function(data){                       
+                  try {
+                      $.each(data,function(i,item){
+                          $.each(item,function(i,mascota)
+                          {
+                                  for (let a=0;a<mascota.length;a++){
+                                  const option = document.createElement('option');
+                                  const valor = i+"/"+mascota[a];
+                                  option.value = valor;
+                                  option.text = valor;
+                                  document.getElementById("miSelect").appendChild(option); 
+                              }
+                          });   
+                      });
+                  } catch (error) {
+                      //console.log("algunas razas no tienen subrazas");
+                  }
+              });
+          });
+      </script>
+  
+  <script type="text/javascript">
+  
+      function cambiarImagen(direccion){
+           
+              var combo = direccion;
+              if(combo.selectedIndex>0){
+                  var selected = combo.options[combo.selectedIndex].text;
+                  let texto = "https://dog.ceo/api/breed/"+selected+"/images/random";
+                  $.get(texto,
+                          function(data){
+                              $.each(data,function(i,item){ 
+                                  if(item[0]!="s")
+                                      document.getElementById("imagen_perro").src=item;
+                              });
+  
+                          });
+              }
+             
+  }
+  
+  </script>
+
     </head>
     <body>
         <!--comentarios-->
@@ -85,23 +159,35 @@
 
         <br>
         <br>
-        <div class="apirest">
-          <p class="text-right">Aquí podría ir la API REST</p>
-        </div>
+
+        
         <br>
 
 
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-4">
             <h4>Productos Premium</h4>
             <h3>Le mejor alimentación y cuidado para tu mascota.</h3>
             <h3>Certificados por la asosiación nacional de alimentos para mascotas.</h3>
             <center>
-              <img src="img/calidad.JPG" width="50" height="40">
+              <img src="img/calidad.JPG" width="40" height="40">
             </center> 
             <hr>
           </div>
-          <div class="col-md-6">
+          
+            
+              <div class="col-md-4">
+                
+                <center>
+                  <h2>Identifica tu raza</h2>
+                  <select id="miSelect" onchange='cambiarImagen(document.getElementById("miSelect"));'></select>
+                </center>  
+                  <br>
+                  <img id="imagen_perro" src="img/carperr.jpg" class="mx-auto d-block" width="204" height="136">
+              </div>
+            
+          
+          <div class="col-md-4">    
             <h4>Despacho a domicilio</h4>
             <h3 >Por compras superiores a $100.000 </h3>
             <h3>Solo disponible en la región Metropolitana.</h3>
@@ -115,10 +201,12 @@
         </div>
         </div>
         <!--productos-->
+        <br>
+        <br>
 
         
         <div class="container"><!--margenes tanto izq como der-->
- 
+          
           <div class="card-colums" >
             <div class="row" id="galeria">
                 <div class="card-group p-0">
@@ -279,9 +367,9 @@
           </footer>
 
         <!--comentarios-->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         
     </body>
 
